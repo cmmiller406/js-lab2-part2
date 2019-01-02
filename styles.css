@@ -1,52 +1,133 @@
-html {
-    font-family: 'Maven Pro', sans-serif;
-}
-
 body {
-    background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url(addressbg.jpg);
+    margin: 0;
+    padding: 0;
+    background-image: url('addressbg.jpg');
+    background-repeat: no-repeat;
     background-size: cover;
+    background-position: center center;
+    min-height: 100vh;
+    font-family: "Maven Pro";
 }
 
-.container {
+.contact {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.contact__container {
+    position: relative;
+    z-index: 10;
+}
+
+.contact__list {
     display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.form {
-    display:flex;
+    flex-wrap: wrap;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 35%;
-    background-color: rgb(179,178,176, 0.6);
-    border-radius: 5px;
-    padding: 15px;
-}
-
-.forminput {
-    background-color: #fff;
     width: 90%;
-    margin: 10px;
-    padding: 10px;
-    height: 10px;
-    border-radius: 5px;
-    font-size: 10px;
-    border: none;
+    margin: 0 auto;
 }
 
-#btn {
-    margin-bottom: 15px;
-    height: 30px;
-    width: 90%;
-}
-p {
-    text-align: center;
-    color: white;
-    font-size: 20px;
+.contact__box__data {
+    list-style: none;
+    padding: 0;
 }
 
-section.domcontainer {
+.contact__box li {
+    word-break: break-all;
+    hyphens: auto;
+}
+
+.contact__box {
     background-color: rgba(255,255,255,0.8);
+    width: 90%;
     border-radius: 5px;
+    padding: 10px;
+    margin: 20px 0;
+    position: relative;
+}
+
+.contact__delete {
+    border: none;
+    position: absolute;
+    bottom: -10px; 
+    right: -20px;
+    background-color: transparent;
+}
+
+.contact__delete i:hover {
+    color: red;
+    border: 1px solid red;
+}
+
+.contact__delete i{
+    border: 1px solid #000;
+    border-radius: 100%;
+    background-color:  rgba(255,255,255,0.8);
+    transition: 0.5s all;
+    cursor: pointer;
+}
+
+.contact:after {
+    content: "";
+    width: 100%; 
+    min-height: 100vh;
+    background-color:rgba(0,0,0,0.6);
+    position: absolute;
+    z-index: 1;
+    top: -20px;
+    left: 0;
+}
+
+input, select, .contact__add {
+    display: block;
+    margin: 20px auto;
+    width: 90%;
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+    font-family: "Maven Pro";
+}
+
+select, .contact__add {
+    width: 94%;
+    height: 33px;
+    background-color: #fff;
+}
+
+.contact__header {
+    margin-top: 0;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+    font-size: 24px;
+}
+
+.contact__form {
+    margin: 20px auto;
+    background: rgb(179,178,176, 0.6);
+    width: 90%;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+
+@media only screen and (min-width: 768px) {
+    .contact__list {
+        flex-direction: row;
+    }
+
+    .contact__box {
+        width: calc(33% - 80px);
+        margin: 20px;
+    }
+
+    .contact__container {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .contact__form {
+        width: 500px;
+    }
 }

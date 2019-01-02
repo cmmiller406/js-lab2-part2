@@ -1,27 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="styles.css">
-    <link href="https://fonts.googleapis.com/css?family=Maven+Pro" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Contact List</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Maven+Pro" rel="stylesheet">
 </head>
 <body>
-    <section class="container">
-        <form class="form">
-            <p>My Contacts</p>
-            <input class= "forminput" type= "text" placeholder= "Name">
-            <input class= "forminput" type= "text" placeholder= "Email">
-            <input class= "forminput" type= "text" placeholder= "Phone">
-            <input class= "forminput" type= "text" placeholder= "Relation">
-            <button class= "forminput" id ="btn" type="button" class="btn">Add</button>
-        </form>
-    </section>
-    <section class="dom-container">
-
-    </section>
-    <script src="lab2part2.js"></script>
+  <main class="contact">
+    <div class="contact__container">
+      <form class="contact__form">
+        <h1 class="contact__header">My Contacts</h1>
+        <input class="contact__input" type="text" placeholder="Name">
+        <input class="contact__input" type="text" placeholder="Email">
+        <input class="contact__input" type="text" placeholder="Phone">
+        <select class="contact__input contact__select">
+          <option value="family">Family</option>
+          <option value="friend">Friend</option>
+          <option value="coworker">Coworker</option>
+        </select>
+        <button class="contact__add" onclick="addressBook.add();" type="button">Add</button>
+      </form>
+      <section class="contact__list"></section>
+   </div>
+  </main>
+  <script src="contact.js"></script>
 </body>
 </html>
